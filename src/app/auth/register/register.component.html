@@ -4,45 +4,42 @@
       <div class="valign">
         <div id="registration-form" class="col s12 m6 push-m3 ">
           <div class="card-panel white">
-            <form
-              #registerForm="ngForm"
-              (ngSubmit)="registerHandler(registerForm.value)"
-            >
+            <form #registerForm="ngForm" (ngSubmit)="registerHandler(registerForm.value)">
               <p class="center">
-                <a class="flow-text indigo-text text-lighten-3" routerLink="/"
-                  ><span class="red-text text-lighten-3">Net</span>Book</a
-                >
+                <a class="flow-text indigo-text text-lighten-3" routerLink="/"><span
+                    class="red-text text-lighten-3">Net</span>Book</a>
               </p>
               <div class="form-group mx-auto">
                 <div class="row">
-                  <div class="input-field col s12 m4">
+                  <div class="input-field col s12 m6">
                     <label class="font-weight-bold">Email</label>
-                    <input ngModel name="email" type="email" />
+                    <input #registerInput="ngModel" ngModel name="email" type="email" email required />
+                    <span class="red-text" *ngIf="registerInput.invalid && registerInput.touched">Email is
+                      required</span>
                   </div>
-                  <div class="input-field col s12 m4">
-                    <label class="font-weight-bold">Име и Фамилия</label>
-                    <input ngModel name="fullName" type="text" />
-                  </div>
-                  <div class="input-field col s12 m4">
+                  <div class="input-field col s12 m6">
                     <label class="font-weight-bold">Парола</label>
-                    <input ngModel name="password" type="password" />
+                    <input #passwordInput="ngModel" ngModel name="password" type="password" required />
+                    <span class="red-text" *ngIf="registerInput.invalid && passwordInput.touched">Password is
+                      required</span>
                   </div>
-                  <div class="input-field col s12 m4">
-                    <label class="font-weight-bold"
-                      >Потвърждаване на паролата</label
-                    >
-                    <input ngModel name="confirmPassword" type="password" />
+                  <div class="input-field col s12 m6">
+                    <label class="font-weight-bold">Потвърждаване на паролата</label>
+                    <input #confirmInput="ngModel" ngModel name="confirmPassword" type="password" required />
+                    <span class="red-text" *ngIf="confirmInput.invalid && confirmInput.touched">Confirm Password
+                      is required</span>
                   </div>
-                  <div class="input-field col s12 m4">
+                  <div class="input-field col s12 m6">
                     <label class="font-weight-bold">Код За Регистрация</label>
-                    <input ngModel name="registerCode" type="text" />
+                    <input #registerCodeInput="ngModel" ngModel name="registerCode" type="text" required />
+                    <span class="red-text" *ngIf="registerCodeInput.invalid && registerCodeInput.touched">Register Code
+                      is
+                      required</span>
                   </div>
                 </div>
                 <div class="row" style="margin-top: 34px; margin-right: 15px;">
                   <div class="right-align">
-                    <button
-                      class="btn waves-effect waves-light gradient-animation"
-                    >
+                    <button class="btn waves-effect waves-light gradient-animation">
                       Регистрация
                     </button>
                   </div>

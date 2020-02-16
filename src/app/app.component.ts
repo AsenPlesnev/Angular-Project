@@ -1,3 +1,5 @@
+import { User } from 'firebase';
+import { AuthService } from './auth/auth.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'NetBook';
+
+  get isLogged(): boolean {
+    return this.authService.isLoggedIn;
+  }
+
+  constructor(private authService: AuthService) { }
 }

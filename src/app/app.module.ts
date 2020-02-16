@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { NotifierModule } from 'angular-notifier';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +33,9 @@ const config = {
     AngularFireModule.initializeApp(config),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AuthModule
+    AuthModule,
+    NotifierModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
