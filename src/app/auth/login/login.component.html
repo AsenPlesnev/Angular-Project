@@ -1,0 +1,49 @@
+<body class="gradient-animation" style="overflow-x:hidden;">
+  <div
+    class="row gradient-animation full-height valign-wrapper margin-bottom-0"
+  >
+    <div class="col s12 m8 offset-m2 l6 offset-l3">
+      <div id="login-form">
+        <div class="row">
+          <div class="card-panel white">
+            <form
+              #loginForm="ngForm"
+              (ngSubmit)="loginHandler(loginForm.value)"
+            >
+              <div class="text-danger"></div>
+              <p class="center">
+                <a class="flow-text indigo-text text-lighten-3" routerLink="/"
+                  ><span class="red-text text-lighten-3">Net</span>Book</a
+                >
+              </p>
+              <div class="form-group mx-auto">
+                <div class="row">
+                  <div class="input-field col s12 m4">
+                    <label class="font-weight-bold">Електронна Поща</label>
+                    <input ngModel name="email" type="email" />
+                  </div>
+                  <div class="input-field col s12 m4">
+                    <label class="font-weight-bold">Парола</label>
+                    <input ngModel name="password" type="password" />
+                  </div>
+                  <div
+                    class="row"
+                    style="margin-top: 34px; margin-right: 15px;"
+                  >
+                    <div class="center-align">
+                      <button
+                        class="btn waves-effect waves-light gradient-animation"
+                      >
+                        Вход
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

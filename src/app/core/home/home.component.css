@@ -155,6 +155,7 @@ label {
 .gradient-animation {
   background: linear-gradient(270deg, #3a56c8, #8863d2, #3a56c8, #8863d2);
   background-size: 800% 800%;
+  min-height: 100vh;
 
   -ms-animation: Animation 30s ease infinite;
   -webkit-animation: Animation 30s ease infinite;

@@ -1,32 +1,49 @@
-<div class="row">
-  <div class="col s12">
-    <div class="valign">
-      <div>
-        <h1 class="header center white-text">
-          <span class="red-text text-lighten-3">Net</span>Book
-        </h1>
-        <p class="flow-text center white-text">Проверка на ученически картон</p>
+<body class="gradient-animation" style="overflow-x:hidden;">
+  <nav class="transparent z-depth-0">
+    <div class="nav-wrapper">
+      <div class="nav-wrapper">
+        <div class="row">
+          <div class="col s12">
+            <ul class="right hide-on-med-and-down">
+              <li><a routerLink="/register">Регистрация</a></li>
+              <li><a routerLink="/login">Вход</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-        <form action="https://ekarton.net" method="post">
-          <div class="container">
-            <div class="row">
-              <div class="input-field col s12 m4 push-m4">
-                <input id="egn" name="egn" type="text" value="" />
-                <label for="egn">ЕГН / ЛНЧ</label>
+  <div class="row">
+    <div class="col s12">
+      <div class="valign">
+        <div>
+          <h1 class="header center white-text">
+            <span class="red-text text-lighten-3">Net</span>Book
+          </h1>
+          <p class="flow-text center white-text">Проверка на ученик</p>
+
+          <form action="https://ekarton.net" method="post">
+            <div class="container">
+              <div class="row">
+                <div class="input-field col s12 m4 push-m4">
+                  <input id="egn" name="egn" type="text" value="" />
+                  <label for="egn">ЕГН</label>
+                </div>
               </div>
             </div>
-          </div>
-          <p class="center">
-            <button
-              id="next"
-              type="submit"
-              class="button-total button-3 button-3e icon-arrow-right red lighten-3 white-text"
-            >
-              Напред
-            </button>
-          </p>
-        </form>
+            <p class="center">
+              <button
+                id="next"
+                type="submit"
+                class="button-total button-3 button-3e icon-arrow-right red lighten-3 white-text"
+              >
+                Напред
+              </button>
+            </p>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>

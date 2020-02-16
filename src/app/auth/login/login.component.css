@@ -1,0 +1,123 @@
+.register-img {
+  padding-left: 0px;
+  padding-right: 0px;
+
+  /* background-image: url(../images/img2.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 600px;
+}
+
+.login-img {
+  padding-left: 0px;
+  padding-right: 0px;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  width: 600px;
+}
+
+.mattÐ• {
+  color: #22313f;
+}
+
+.bigger {
+  font-size: 100px;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.full-height-child {
+  height: 100%;
+}
+
+.margin-bottom-0 {
+  margin-bottom: 0px;
+}
+
+.rectangle-small {
+  z-index: 5;
+
+  position: relative;
+  top: 0%;
+  left: -11px;
+
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(75% 100%, 44% 100%, 0 67%, 0 40%);
+}
+
+.gradient-animation {
+  background: linear-gradient(270deg, #3a56c8, #8863d2, #3a56c8, #8863d2);
+  background-size: 800% 800%;
+
+  -ms-animation: Animation 30s ease infinite;
+  -webkit-animation: Animation 30s ease infinite;
+  -moz-animation: Animation 30s ease infinite;
+  -o-animation: Animation 30s ease infinite;
+  animation: Animation 30s ease infinite;
+}
+
+@-ms-keyframes Animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-webkit-keyframes Animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-moz-keyframes Animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@-o-keyframes Animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes Animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
