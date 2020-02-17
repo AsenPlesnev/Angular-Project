@@ -37,19 +37,20 @@ export class AuthService {
 
   async login(email: string, password: string) {
     await this.afAuth.auth.signInWithEmailAndPassword(email, password).then(res => {
-      this.router.navigate(['/']);
-      this.showNotification('success', 'Successfully logged in.')
+      this.router.navigate(['/teachers/']);
+      this.showNotification('success', 'Successfully logged in.');
     },
       err => {
         this.showNotification('error', err.message);
       }
     );
+
   }
 
   async register(email: string, password: string) {
     await this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then(res => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/teachers']);
         this.showNotification('success', 'Successfully registered.')
       },
         err => {

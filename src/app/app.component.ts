@@ -1,4 +1,3 @@
-import { User } from 'firebase';
 import { AuthService } from './auth/auth.service';
 import { Component } from '@angular/core';
 
