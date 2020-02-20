@@ -7,7 +7,10 @@ import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
-  declarations: [NavigationComponent, HomeComponent],
+  declarations: [
+    NavigationComponent,
+    HomeComponent
+  ],
   imports: [
     CommonModule,
     RouterModule

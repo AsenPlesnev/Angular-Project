@@ -1,4 +1,5 @@
-import { TeachersModule } from './teachers/teachers.module';
+import { StudentsModule } from './students/students.module';
+import { SubjectsModule } from './subjects/subjects.module';
 import { AuthModule } from './auth/auth.module';
 import { environment } from './../environments/environment.prod';
 import { CoreModule } from './core/core.module';
@@ -36,8 +37,8 @@ const config = {
     AngularFirestoreModule,
     AuthModule,
     NotifierModule,
-    TeachersModule
-
+    SubjectsModule,
+    StudentsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

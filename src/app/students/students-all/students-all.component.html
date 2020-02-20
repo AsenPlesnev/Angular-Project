@@ -1,0 +1,55 @@
+<body>
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="title" style="position: relative">
+                        <div class="row" id="white">
+                            <div class="col s12 m12 l9 xl8" style="margin-top: 28px">
+                                <h4 class="white-text">
+                                    Ученици
+                                    <a routerLink="/students/create"
+                                        class="waves-effect waves-light btn gradient-animation"
+                                        style="margin-left: 20px"><i class="material-icons left">add</i>Добави<span
+                                            class="hide-on-large-only hide-on-small-only">ученик</span></a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel white" style="overflow-x: auto;">
+                        <table class="highlight">
+                            <thead>
+                                <tr>
+                                    <th>Ученик</th>
+                                    <th>Код</th>
+                                    <th>Телефон</th>
+                                    <th>Действия</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr *ngFor="let item of items" style="cursor: default;">
+                                    <td>{{item.payload.doc.data().name}}</td>
+                                    <td>{{item.payload.doc.data().code}}</td>
+                                    <td>{{item.payload.doc.data().phone}}</td>
+                                    <td>
+                                        <a (click)="editSubject(item)" class="indigo-text text-lighten-3 tooltipped"
+                                            data-position="bottom" data-delay="50" data-tooltip="Редактиране"><i
+                                                class="material-icons">edit</i></a>
+                                        <a (click)="deleteSubject(item)" class="modal-trigger tooltipped"
+                                            data-position="bottom" data-delay="50" data-tooltip="Изтриване">
+                                            <i class="material-icons red-text">delete</i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="right-align" style="margin-top: 20px">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>

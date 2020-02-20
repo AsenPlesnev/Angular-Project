@@ -1,0 +1,44 @@
+<body>
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="title" style="position: relative">
+                        <div class="row" id="white">
+                            <div class="col s12" style="margin-top: 28px">
+                                <h4 class="white-text">
+                                    Създаване на предмет
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel white">
+                        <form #createForm="ngForm" (ngSubmit)="createHandler(createForm.value)">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label for="name">Име на предмета</label>
+                                    <input #nameInput="ngModel" ngModel name="name" type="text" required>
+                                    <span class="red-text" *ngIf="nameInput.invalid && nameInput.touched">Name is
+                                        required</span>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 34px">
+                                <div class="right-align">
+                                    <button [disabled]="createForm.invalid"
+                                        class="btn waves-effect waves-light gradient-animation">
+                                        <i class="material-icons right">send</i> Създай
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a class="waves-effect btn-flat left" routerLink="/subjects/all"
+                style="margin-top: -20px; color: #909090"><i
+                    class="material-icons left">keyboard_arrow_left</i>Назад</a>
+        </div>
+    </main>
+</body>

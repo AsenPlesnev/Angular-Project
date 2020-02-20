@@ -1,0 +1,55 @@
+<body>
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="title" style="position: relative">
+                        <div class="row" id="white">
+                            <div class="col s12" style="margin-top: 28px">
+                                <h4 class="white-text">
+                                    Редактиране на ученик
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel white">
+                        <form [formGroup]="editForm" novalidate (ngSubmit)="onSubmit(editForm.value)">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="Name" class="form-control" formControlName="name">
+                                    <span class="red-text"
+                                        *ngIf="editForm.get('name').hasError(validation.name.type) && (editForm.get('name').dirty || editForm.get('name').touched)">{{validation.name.message}}</span>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <input placeholder="Code" class="form-control" formControlName="code">
+                                    <span class="red-text"
+                                        *ngIf="editForm.get('code').hasError(validation.code.type) && (editForm.get('code').dirty || editForm.get('code').touched)">{{validation.code.message}}</span>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <input placeholder="Phone" class="form-control" formControlName="phone">
+                                    <span class="red-text"
+                                        *ngIf="editForm.get('phone').hasError(validation.phone.type) && (editForm.get('phone').dirty || editForm.get('phone').touched)">{{validation.phone.message}}</span>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 34px">
+                                <div class="right-align">
+                                    <button class="btn waves-effect waves-light gradient-animation"
+                                        [disabled]="!editForm.valid">
+                                        Запази
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a class="waves-effect btn-flat left" routerLink="/students/all"
+                style="margin-top: -20px; color: #909090"><i
+                    class="material-icons left">keyboard_arrow_left</i>Назад</a>
+        </div>
+
+    </main>
+</body>

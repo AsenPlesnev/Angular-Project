@@ -1,0 +1,43 @@
+<body>
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="title" style="position: relative">
+                        <div class="row" id="white">
+                            <div class="col s12" style="margin-top: 28px">
+                                <h4 class="white-text">
+                                    Редактиране на предмет
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel white">
+                        <form [formGroup]="editForm" novalidate (ngSubmit)="OnSubmit(editForm.value)">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <input placeholder="Name" class="form-control" formControlName="name">
+                                    <span class="red-text"
+                                        *ngIf="editForm.get('name').hasError(validation.name.type) && (editForm.get('name').dirty || editForm.get('name').touched)">{{validation.name.message}}</span>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 34px">
+                                <div class="right-align">
+                                    <button [disabled]="!editForm.valid"
+                                        class="btn waves-effect waves-light gradient-animation">
+                                        <i class="material-icons right">send</i> Редактирай
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a class="waves-effect btn-flat left" routerLink="/subjects/all"
+                style="margin-top: -20px; color: #909090"><i
+                    class="material-icons left">keyboard_arrow_left</i>Назад</a>
+        </div>
+    </main>
+</body>

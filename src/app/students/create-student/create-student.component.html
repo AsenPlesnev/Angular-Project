@@ -1,0 +1,59 @@
+<body>
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="title" style="position: relative">
+                        <div class="row" id="white">
+                            <div class="col s12" style="margin-top: 28px">
+                                <h4 class="white-text">
+                                    Създаване на ученик
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel white">
+                        <form #createForm="ngForm" (ngSubmit)="createHandler(createForm.value)">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <label class="font-weight-bold">Име на ученика</label>
+                                    <input #nameInput="ngModel" ngModel type="text" name="name" required>
+                                    <span *ngIf="nameInput.invalid && nameInput.touched" class="red-text">Name
+                                        is required</span>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <label class="font-weight-bold">Код на ученика</label>
+                                    <input #codeInput="ngModel" ngModel name="code" type="text" required maxlength="10">
+                                    <span *ngIf="codeInput.invalid && codeInput.touched" class="red-text">Code
+                                        is required</span>
+                                </div>
+                                <div class="input-field col s12 m6">
+                                    <label class="font-weight-bold">Teлефон на ученика</label>
+                                    <input #phoneInput="ngModel" ngModel name="phone" type="text" required
+                                        maxlength="10">
+                                    <span class="red-text" *ngIf="phoneInput.invalid && phoneInput.touched">Phone is
+                                        required</span>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 34px">
+                                <div class="right-align">
+                                    <button [disabled]="createForm.invalid"
+                                        class="btn waves-effect waves-light gradient-animation">
+                                        Запази
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a class="waves-effect btn-flat left" routerLink="/students/all"
+                style="margin-top: -20px; color: #909090"><i
+                    class="material-icons left">keyboard_arrow_left</i>Назад</a>
+        </div>
+
+    </main>
+</body>
