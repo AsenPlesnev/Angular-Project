@@ -1,7 +1,7 @@
+import { GradesModule } from './grades/grades.module';
 import { StudentsModule } from './students/students.module';
 import { SubjectsModule } from './subjects/subjects.module';
 import { AuthModule } from './auth/auth.module';
-import { environment } from './../environments/environment.prod';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -38,7 +38,9 @@ const config = {
     AuthModule,
     NotifierModule,
     SubjectsModule,
-    StudentsModule
+    StudentsModule,
+    GradesModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,51 @@
+<body class="gradient-animation" style="overflow-x:hidden;">
+    <div class="row">
+        <div class="col s12">
+            <div>
+                <div id="welcome">
+                    <a asp-controller="Home" asp-action="Index">
+                        <h1 routerLink="/" class="header center white-text"><span
+                                class="red-text text-lighten-3">Net</span>Book</h1>
+                    </a>
+                    <p class="flow-text center white-text">Проверка на ученик</p>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div class="card-panel center">
+                                    <ul class="collection">
+                                        <li>
+                                            <p>
+                                                <b class="title">Ученик: {{student.name}}</b> <br />
+                                                Код: {{student.code}} <br />
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-panel center" style="overflow-x: auto;">
+                                    <table class="highlight">
+                                        <thead>
+                                            <tr>
+                                                <th>Учебен предмет</th>
+                                                <th>Оценки</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let subject of subjects let i = index;">
+                                                <td>{{subject.payload.doc.data().name}}</td>
+
+                                                <td>
+                                                    <div *ngFor="let grade of grades[i]">{{grade.grade}}</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

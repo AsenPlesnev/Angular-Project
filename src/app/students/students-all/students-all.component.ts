@@ -23,11 +23,16 @@ export class StudentsAllComponent implements OnInit {
       .subscribe((result) => this.items = result);
   }
 
-  editSubject(item) {
+  createGradeHandler(item) {
+    this.router.navigate(['/grades/create/' + item.payload.doc.id]);
+  }
+
+  editStudent(item) {
     this.router.navigate(['/students/edit/' + item.payload.doc.id]);
   }
 
-  deleteSubject(item) {
+  deleteStudent(item) {
+
     this.studentService.deleteStudent(item.payload.doc.id)
       .then(res => {
         this.notifier.notify('success', 'Subject deleted');

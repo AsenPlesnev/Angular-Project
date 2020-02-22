@@ -1,3 +1,5 @@
+import { AngularFirestore } from '@angular/fire/firestore';
+import { StudentsService } from './../../students/students.service';
 import { NotifierService } from 'angular-notifier';
 import { SubjectService } from './../subject.service';
 import { Component, OnInit, createPlatformFactory } from '@angular/core';
@@ -13,14 +15,18 @@ export class EditComponent implements OnInit {
 
   editForm: FormGroup;
   item: any;
+  students: Array<any>;
 
   validation = {
     'name': { type: 'required', message: 'Name is required.' }
   };
 
-  constructor(private subjectService: SubjectService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private notifier: NotifierService) { }
+  constructor(private subjectService: SubjectService, private route: ActivatedRoute, private router: Router, private fb: FormBuilder, private notifier: NotifierService,
+    private studentService: StudentsService, private db: AngularFirestore) { }
 
   ngOnInit() {
+    this.getData();
+
     this.route.data.subscribe(routeData => {
       let data = routeData['data'];
       if (data) {
@@ -29,6 +35,11 @@ export class EditComponent implements OnInit {
         this.createForm();
       }
     });
+  }
+
+  getData() {
+    this.studentService.getStudents()
+      .subscribe((result) => this.students = result);
   }
 
   createForm() {
@@ -41,6 +52,9 @@ export class EditComponent implements OnInit {
     this.subjectService.updateSubject(this.item.id, value)
       .then(
         res => {
+          this.students.forEach(student => {
+            this.db.collection('students').doc(student.payload.doc.id).collection('subjects').doc(this.item.id).update(value);
+          })
           this.router.navigate(['/subjects/all']);
           this.notifier.notify('success', 'Subject edited');
         }

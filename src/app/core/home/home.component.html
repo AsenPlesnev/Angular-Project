@@ -23,21 +23,19 @@
           </h1>
           <p class="flow-text center white-text">Проверка на ученик</p>
 
-          <form action="https://ekarton.net" method="post">
+          <form #searchForm="ngForm" (ngSubmit)="onSubmit(searchForm.value)">
             <div class="container">
               <div class="row">
                 <div class="input-field col s12 m4 push-m4">
-                  <input id="egn" name="egn" type="text" value="" />
+                  <input #codeInput="ngModel" ngModel name="code" type="text" required />
                   <label for="egn">ЕГН</label>
+                  <span *ngIf="codeInput.invalid && codeInput.touched" class="red-text">Code is required</span>
                 </div>
               </div>
             </div>
             <p class="center">
-              <button
-                id="next"
-                type="submit"
-                class="button-total button-3 button-3e icon-arrow-right red lighten-3 white-text"
-              >
+              <button id="next" [disabled]="searchForm.invalid"
+                class="button-total button-3 button-3e icon-arrow-right red lighten-3 white-text">
                 Напред
               </button>
             </p>

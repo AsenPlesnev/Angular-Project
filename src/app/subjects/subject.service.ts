@@ -6,7 +6,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class SubjectService {
 
-  subjects: Array<any>
+  subjects: Array<any>;
 
   constructor(private db: AngularFirestore) { }
 

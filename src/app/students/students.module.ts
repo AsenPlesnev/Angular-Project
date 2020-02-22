@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { StudentsAllComponent } from './students-all/students-all.component';
 import { StudentsEditComponent } from './students-edit/students-edit.component';
+import { StudentGradesComponent } from './student-grades/student-grades.component';
+import { InfoComponent } from './info/info.component';
 
 
 
@@ -13,6 +15,8 @@ import { StudentsEditComponent } from './students-edit/students-edit.component';
     CreateStudentComponent,
     StudentsAllComponent,
     StudentsEditComponent,
+    StudentGradesComponent,
+    InfoComponent,
   ],
   imports: [
     CommonModule,

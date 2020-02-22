@@ -1,0 +1,66 @@
+<body>
+    <main id="main">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <div class="title" style="position: relative">
+                        <div class="row" id="white">
+                            <div class="col s12" style="margin-top: 28px">
+                                <h4 class="white-text">
+                                    Добавяне на оценка
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-panel white">
+                        <form materialize #createForm="ngForm" (ngSubmit)="submit(createForm.value)">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <select #gradeInput="ngModel" ngModel name="grade" materialize="material_select">
+                                        <option selected="selected" value="">Оценка</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                    <span class="red-text"></span>
+                                </div>
+                                <div class="input-field col s12">
+                                    <select #studentInput="ngModel" ngModel name="student"
+                                        materialize="material_select">
+                                        <option selected="selected" [value]="student.id">
+                                            {{student.name}}</option>
+                                    </select>
+                                </div>
+                                <div class="input-field col s12">
+                                    <select #subjectInput="ngModel" ngModel name="subject" materialize="material_select"
+                                        [materializeSelectOptions]="subjects">
+                                        <option selected="selected" value="">Предмет</option>
+                                        <option *ngFor="let subject of subjects" [value]="subject.payload.doc.id">
+                                            {{subject.payload.doc.data().name}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 34px">
+                                <div class="right-align">
+                                    <button class="btn waves-effect waves-light gradient-animation">
+                                        Запази
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <a routerLink="/students/all" class="waves-effect btn-flat left"
+                style="margin-top: -20px; color: #909090"><i
+                    class="material-icons left">keyboard_arrow_left</i>Назад</a>
+        </div>
+
+    </main>
+</body>

@@ -1,3 +1,5 @@
+import { InfoComponent } from './students/info/info.component';
+import { GradeCreateComponent } from './grades/grade-create/grade-create.component';
 import { EditStudentsResolver } from './students/edit-students-resolver';
 import { StudentsEditComponent } from './students/students-edit/students-edit.component';
 import { StudentsAllComponent } from './students/students-all/students-all.component';
@@ -77,6 +79,26 @@ const routes: Routes = [
       {
         path: 'edit/:id',
         component: StudentsEditComponent,
+        resolve: {
+          data: EditStudentsResolver
+        },
+        canActivate: [AuthGuard]
+      },
+      {
+        path: 'info/:id',
+        component: InfoComponent,
+        resolve: {
+          data: EditStudentsResolver
+        }
+      }
+    ]
+  },
+  {
+    path: 'grades',
+    children: [
+      {
+        path: 'create/:id',
+        component: GradeCreateComponent,
         resolve: {
           data: EditStudentsResolver
         },

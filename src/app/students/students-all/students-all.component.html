@@ -33,10 +33,14 @@
                                     <td>{{item.payload.doc.data().code}}</td>
                                     <td>{{item.payload.doc.data().phone}}</td>
                                     <td>
-                                        <a (click)="editSubject(item)" class="indigo-text text-lighten-3 tooltipped"
+                                        <a (click)="createGradeHandler(item)"
+                                            class="indigo-text text-lighten-3 tooltipped" data-position="bottom"
+                                            data-delay="50" data-tooltip="Оценки на целия клас"><i
+                                                class="material-icons">star_half</i></a>
+                                        <a (click)="editStudent(item)" class="indigo-text text-lighten-3 tooltipped"
                                             data-position="bottom" data-delay="50" data-tooltip="Редактиране"><i
                                                 class="material-icons">edit</i></a>
-                                        <a (click)="deleteSubject(item)" class="modal-trigger tooltipped"
+                                        <a (click)="deleteStudent(item)" class="modal-trigger tooltipped"
                                             data-position="bottom" data-delay="50" data-tooltip="Изтриване">
                                             <i class="material-icons red-text">delete</i>
                                         </a>

@@ -1,3 +1,4 @@
+import { AngularFirestore } from '@angular/fire/firestore';
 import { NotifierService } from 'angular-notifier';
 import { ActivatedRoute, Router } from '@angular/router';
 import { StudentsService } from './../students.service';
@@ -13,6 +14,7 @@ export class StudentsEditComponent implements OnInit {
 
   editForm: FormGroup;
   item: any;
+  students: Array<any>;
 
   validation = {
     'name': { type: 'required', message: 'Name is required.' },
